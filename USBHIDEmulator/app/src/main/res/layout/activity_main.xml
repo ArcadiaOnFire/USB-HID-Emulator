@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="24dp">
+
+    <!-- Direct Keyboard Button pinned to top -->
+    <Button
+        android:id="@+id/button_direct_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="> direct_keyboard"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:fontFamily="monospace"
+        android:background="#000000"
+        android:stateListAnimator="@null"
+        android:elevation="0dp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="24dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground" />
+
+    <!-- Touchpad with white border below direct keyboard button and above mouse buttons -->
+    <FrameLayout
+        android:id="@+id/touchpad_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/button_direct_keyboard"
+        android:layout_above="@id/mouse_buttons_container"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/touchpad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="[ touchpad ]"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:background="#000000"
+            android:importantForAccessibility="no" />
+    </FrameLayout>
+
+    <!-- Mouse buttons container pinned to bottom -->
+    <LinearLayout
+        android:id="@+id/mouse_buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:id="@+id/btn_left_mouse"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:text="left"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="monospace"
+            android:background="#000000"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <Button
+            android:id="@+id/btn_middle_mouse"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:text="middle"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="monospace"
+            android:background="#000000"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <Button
+            android:id="@+id/btn_right_mouse"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:text="right"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="monospace"
+            android:background="#000000"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:gravity="center"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+    </LinearLayout>
+
+    <!-- Invisible EditText for keyboard input capture -->
+    <EditText
+        android:id="@+id/edittext_keyboard_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#000000"
+        android:textColor="#00000000"
+        android:fontFamily="monospace"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:inputType="textVisiblePassword"
+        android:imeOptions="actionDone"
+        android:cursorVisible="false"
+        android:padding="12dp"
+        android:importantForAccessibility="no"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+</RelativeLayout>
